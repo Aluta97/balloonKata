@@ -1,59 +1,46 @@
-var set = " 4 sets of red, 3 sets of blue, and 3 sets of yellow ";
+//store them in array
+var set = "4 sets of red, 3 sets of blue, 3 sets of yellow";
 
-//store my statement as strings
-//put my strings into two diffent arrays
-//remove for, and, color.
-//remove the R in the value so that i work with numbers
+// spliting my first line
+var newSet = set.split(",");
 
-// use split method to put method to put my string into an  arrays
-
- var newSet = set.split(",");
-//  console.log(newSet);
-
-// a froEach loop and remove the of and sets
-
-var balloons = [];
-
-newSet.forEach(function(ab){
-     balloons.push(ab.replace(" sets", "")
-              .replace(" of", "")
-              .replace(" and", "")
-              .split(" , ")
-
-           )
+console.log(newSet);
 
 
+var arr = [];
+
+newSet.forEach(function(ab) {
+  arr.push(ab.split("sets of"));
 });
- console.log(balloons);
 
-// var trim = balloons.trim();
-//     console.log(trim)
+console.log(arr);
 
-//create a new loop to through my newarray
-//while doing that divide my Array by 3 to get each balloons cost;
+var ar = [];
 
-a = [];
-balloons.forEach(function(ab){
+arr.forEach(function(as) {
 
-      a.push(Number[ab]) * 3;
- });
-    // console.log(a)
+  ar.push(Number(as[0] * 3)+ " "+ as[1]);
+});
+console.log(ar); //balloons ordered;
 
-    //How much do all the balloons cost
+//how much do each balloons cost
 
-  var priceforEach = "R4 for red, R5 for blue, and R5.50 for yellow.";
+var price = "R4 for red, R5 for blue, and R5.50 for yellow";
 
-var price = priceforEach.split(",")
+var newPrice = price.split(",");
 
-  // console.log(price);
+ console.log(newPrice);
 
-aArray = [];
+array = [];
 
-  price.forEach(function(fo){
-      aArray.push(fo.replace("for", "")
-       .replace("and", "")
-       .split(",")
-     )
-  })
+newPrice.forEach(function(al){
+  array.push(al.replace("R", "")
+                .replace("for", ",")
+                .replace("and", "")
+                .split(",")
+            );
+});
 
-  console.log(aArray)
+ console.log(array);
+
+// each balloon :
